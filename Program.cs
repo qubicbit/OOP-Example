@@ -23,15 +23,14 @@ namespace OOP_Example
             circle1.DisplayArea();
 
             // Polymorphic Circle instance
-            Shape shape2 = new Circle
+            Shape shape2 = new Circle   //Shape reference, Circle object
             {
                 Name = "Circle",
                 IsFilled = true,
                 Radius = 5
             };
-            shape2.GetInfo();       // Output: This is a Circle and it is Filled.
-            shape2.DisplayArea(); // Output: The area of the circle is: 78.53981633974483
-
+            shape2.GetInfo();        // Output: This is a Circle and it is Filled.
+            shape2.DisplayArea();   // Calls Circle's version of DisplayArea()
 
         }
 
