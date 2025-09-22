@@ -10,11 +10,13 @@
             shape1.IsFilled = false;
             shape1.GetInfo(); // Output: This is a Circle and it Not filled.
 
-            // create another instance of Shape
-            Shape shape2 = new Shape();
-            shape2.Name = "Rectangle";
-            shape2.IsFilled = true;
-            shape2.GetInfo(); // Output: This is a Rectangle and it is Filled.
+            Circle circle = new Circle();
+            circle.Name = "Circle";
+            circle.IsFilled = true;
+            circle.Radius = 2;
+            circle.GetInfo(); // Output: This is a Circle and it is Filled.
+            circle.DisplayArea(); // Output: Area of the circle: 12.566370614359172
+
 
         }
     }
