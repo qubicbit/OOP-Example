@@ -4,18 +4,42 @@
     {
         static void Main(string[] args)
         {
-            // Create an instance of Shape
-            Shape shape1 = new Shape();
-            shape1.Name = "Circle";
-            shape1.IsFilled = false;
-            shape1.GetInfo(); // Output: This is a Circle and it Not filled.
+            // Create a Shape reference pointing to a Circle object 
+            // Abstraction and Polymorphism in action
+            Shape circle = new Circle
+            {
+                Name = "Circle",
+                IsFilled = true,
+                Radius = 5.0
+            };
 
-            // create another instance of Shape
-            Shape shape2 = new Shape();
-            shape2.Name = "Rectangle";
-            shape2.IsFilled = true;
-            shape2.GetInfo(); // Output: This is a Rectangle and it is Filled.
+            // Create a shape reference pointing to a Rectangle object
+            Shape rectangle = new Rectangle
+            {
+                Name = "Rectangle",
+                IsFilled = false,
+                Length = 4.0,
+                Width = 6.0
+            };
 
+            // Create a shape reference pointing to a Triangle object
+            Shape triangle = new Triangle
+            {
+                Name = "Triangle",
+                IsFilled = true,
+                Base = 3.0,
+                Height = 4.0
+            };
+            // create an array of shapes to demonstrate polymorphism
+            var shapes = new Shape[] { circle, rectangle, triangle };
+
+            // loop through the array and display info and area for each shape
+            foreach (Shape shape in shapes)
+            {
+                Console.WriteLine("--- New Shape Object ---");
+                shape.GetInfo();
+                shape.DisplayArea();
+            }
         }
     }
 }
