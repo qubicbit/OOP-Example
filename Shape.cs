@@ -1,28 +1,19 @@
 ﻿namespace OOP_Example
 {
-    //Abstraction of a Shape
-    //    Define abstract class Shape
-    //    Property: Name
-    //    Property: IsFilled
-    //    Abstract Method: GetArea()
-    //    Virtual Method: DisplayArea()
-    //    Method: GetInfo()
-
-    //Define class Circle that inherits from Shape
-    //    Property: Radius
-    //    Override Method: GetArea()
-    //    Override Method: DisplayArea()
 
     public abstract class Shape
     {
-        // Properties
+        // Properties, get set accessors 
         public string Name { get; set; }
         public bool IsFilled { get; set; }
 
         // Abstract method to be implemented by derived classes, no body/implementation here for abstract methods
         public abstract double GetArea();
+
+        // If define here as abstract, must implement in every derived classes
         // public abstract void DisplayArea();
 
+        // Virtual method with a default implementation, can be overridden by derived classes
         public virtual void DisplayArea()
         {
             Console.WriteLine($"Area: {Math.Round(GetArea(), 1)}");
@@ -35,6 +26,7 @@
             Console.WriteLine($"Object: {Name}, Status: {fillStatus}.");
         }
     }
+    // circle class inheriting from Shape class, public to allow access from other classes
     public class Circle : Shape
     {
         // Property specific to Circle
